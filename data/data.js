@@ -1,4 +1,4 @@
-const products = [
+[
   {
     id: 1,
     title: "Espada",
@@ -28,5 +28,3 @@ const products = [
       "https://icons.iconarchive.com/icons/chanut/role-playing/64/Potion-icon.png",
   },
 ];
-
-module.exports = { products };

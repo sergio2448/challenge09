@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<div class="container mt-3 jumbotron" >
+  <h3 class="text-primary"> Products </h3>
+  <div class="d-flex justify-content-end pr-4"><a href="/" >Form</a></div>
+  <br>
+  <% if (products.length > 0) { %>
+    <div class="table-responsive">
+      <table class="table table-dark">
+        <tr class="text-warning">
+          <th class="font-weight-bold">Title</th>
+          <th class="font-weight-bold">Price</th>
+          <th class="font-weight-bold">Image</th></tr>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%=product.title%></td>
+          <td><%=product.price%></td>
+          <td><img class="img-thumbnail" src=<%= product.thumbnail %> alt=<%= product.title %>/></td>
+        </tr><% }); %>
+      </table>
+    </div>
+    <% } else{ %>
+      <h3 class="alert alert-danger">no se encontraron datos</h1>
+    <% } %>
+</div>
