@@ -1,0 +1,13 @@
+<table border="1">
+  <tr>
+    <td>Title</td><td>Price</td><td>Thumbnail</td>
+  </tr>
+  {{#each products}}
+    <tr>
+      <td>{{title}} </td>
+      <td>{{price}}</td>
+      <td><img src={{thumbnail}} /></td>
+    </tr>
+  {{/each}}
+</table>
+<a href="/">Form</a>

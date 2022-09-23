@@ -38,7 +38,7 @@ app.get("/products", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("products.hbs");
 });
 
 app.post("/save", async (req, res) => {
