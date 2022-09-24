@@ -27,18 +27,20 @@ app.engine(
 );
 app.set("views", "./views");
 
-app.set("view engine", "hbs");
+app.set("view engine", "handlebars");
 
 // Routes
 app.use("/api", apiRoutes);
 
 app.get("/products", async (req, res) => {
-  const products = await productApi.getAll();
-  res.render("products.hbs", { products: JSON.parse(products) });
+  let products = await productApi.getAll();
+  let hasProducts = products.length > 3 ? true : false;
+  console.log(hasProducts);
+  res.render("index.hbs", { hasProducts, products: JSON.parse(products) });
 });
 
 app.get("/", (req, res) => {
-  res.render("products.hbs");
+  res.render("index.hbs");
 });
 
 app.post("/save", async (req, res) => {

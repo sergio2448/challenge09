@@ -1,0 +1,22 @@
+<div>
+  <a href="/">Form</a>
+  {{#if hasProducts}}
+    <div>
+      <table border="1">
+        <tr>
+          <td>Title</td><td>Price</td><td>Thumbnail</td>
+        </tr>
+        {{#each products}}
+          <tr>
+            <td>{{title}} </td>
+            <td>{{price}}</td>
+            <td><img src={{thumbnail}} /></td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+  {{else}}
+    <h3>There are no products</h3>
+  {{/if}}
+
+</div>
