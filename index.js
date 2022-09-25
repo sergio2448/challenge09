@@ -21,8 +21,12 @@ app.set("view engine", "ejs");
 app.use("/api", apiRoutes);
 
 app.get("/products", async (req, res) => {
-  const products = await productApi.getAll();
-  res.render("products.ejs", { products: JSON.parse(products) });
+  const getProducts = await productApi.getAll();
+  const products =
+    getProducts.length > -1 && getProducts.length < 4
+      ? false
+      : JSON.parse(getProducts);
+  res.render("products.ejs", { products });
 });
 
 app.get("/", (req, res) => {
