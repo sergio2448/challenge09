@@ -8,7 +8,7 @@ class Container {
   async save(information) {
     try {
       let content = await fs.promises.readFile(`./${this.fileName}`, "utf-8");
-      if (content.length === 0 || content === "[]") {
+      if (content.length === 0 || content.length === 3) {
         information.id = 1;
         await fs.promises.writeFile(
           `./${this.fileName}`,
